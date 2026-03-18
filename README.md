@@ -2,7 +2,7 @@
 
 > A high-performance, responsive, and secure personal portfolio built with modern Web Standards (HTML5, CSS3, ES6+). This portfolio dynamically showcases expertise across **Full Stack Development, Data Analytics, Cybersecurity, and Low-Code Platforms**.
 
-![Portfolio Preview Placeholder](assets/images/profile.jpeg) *(Replace this line with an actual screenshot of the deployed site in the future!)*
+![Portfolio Preview Placeholder]() *(Replace this line with an actual screenshot of the deployed site in the future!)*
 
 ---
 
