@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Sai Shiva - IT Professional exploring Full Stack Development, Data Analysis, Cybersecurity, and Low-Code/No-Code solutions." />
+  <meta name="keywords"
+    content="Sai Shiva, Full Stack Developer, Data Analyst, Cybersecurity, Low Code, No Code, IT Professional, Developer Portfolio" />
+  <meta name="author" content="Sai Shiva" />
+  <!-- Open Graph Meta Tags for SEO & Social Previews -->
+  <meta property="og:title" content="Sai Shiva | Full Stack . Data . Security" />
+  <meta property="og:description"
+    content="Portfolio of Sai Shiva - Crafting intelligent solutions across Full Stack, Data Analysis, Cybersecurity, and Low-Code Platforms." />
+  <meta property="og:type" content="website" />
+  <!-- A placeholder for og:image, standard practice -->
+  <meta property="og:image" content="assets/images/profile.jpeg" />
+  <title>Sai Shiva | Full Stack &middot; Data &middot; Security &middot; Low-Code</title>
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loader" role="status" aria-live="polite">
+    <div class="loader-ring"></div>
+    <p class="loader-text">Loading Experience…</p>
+  </div>
+  <button id="back-to-top" aria-label="Scroll back to top"><i class="fas fa-chevron-up"></i></button>
+  <!-- Navigation -->
+  <nav id="navbar" aria-label="Main Navigation">
+    <div class="nav-logo">SS.</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Domains</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#certs">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="theme-toggle" id="theme-btn" aria-label="Toggle dark and light theme">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
+      <button class="hamburger-menu" id="hamburger-menu" aria-label="Open mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Domains</a>
+    <a href="#projects" class="mobile-link">Work</a>
+    <a href="#certs" class="mobile-link">Credentials</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+  <!-- Main Content Area -->
+  <main>
+  <!-- ═══ HERO SECTION ═══ -->
+  <section id="home" class="hero-section">
+    <div class="aurora-background" aria-hidden="true">
+      <div class="aurora-orb orb-1"></div>
+      <div class="aurora-orb orb-2"></div>
+      <div class="aurora-orb orb-3"></div>
+      <div class="geometric-shape shape-1"></div>
+      <div class="geometric-shape shape-2"></div>
+      <div class="geometric-shape shape-3"></div>
+    </div>
+    <div class="hero-container section-inner-container">
+      <div class="hero-content">
+        <div class="status-badge" role="status">
+          <span class="status-dot"></span> Available for Opportunities
+        </div>
+        <h1 class="hero-title"><span>Sai Shiva</span></h1>
+        <p class="hero-subtitle">Technology , AI & Cybersecurity Enthusiast</p>
+        <div class="typing-container" aria-hidden="true">
+          <span class="typed-text" id="typed-container"></span><span class="typing-cursor"></span>
+        </div>
+        <span class="sr-only">Exploring Full Stack Development, Data Analytics, Cybersecurity, and Low-Code Platforms.</span>
+        <p class="hero-description">
+          Bridging the gap between human needs and digital solutions. Exploring
+          <strong>Full Stack Development</strong>, <strong>Data Analytics</strong>,
+          <strong>Cybersecurity</strong>, and <strong>Low-Code Platforms</strong>.
+        </p>
+        <div class="engagement-actions">
+          <a href="assets/Saishiva-Resume.pdf" class="btn btn--primary" aria-label="Download my resume">
+            <i class="fas fa-file-alt" aria-hidden="true"></i> Resumé
+          </a>
+          <a href="#projects" class="btn btn--outline" aria-label="View my projects">
+            <i class="fas fa-compass" aria-hidden="true"></i> Explore Work
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-container">
+          <div class="profile-ring-outer"></div>
+          <div class="profile-ring-inner"></div>
+          <div class="profile-image-wrapper" id="profile-fallback">
+            <!-- Modern setup for robust image fallback -->
+            <img class="profile-image" src="assets/images/Saishiva_passphoto.jpg" alt="Portrait of Sai Shiva" loading="eager" />
+          </div>
+          <div class="status-indicator-ping"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-track"></div>
+    </div>
+  </section>
+  <hr class="section-divider" aria-hidden="true" />
+  <!-- ═══ ABOUT SECTION ═══ -->
+  <section id="about" class="about-section">
+    <div class="section-inner-container">
+      <header class="section-header reveal">
+        <span class="section-kicker">About Me</span>
+        <h2 class="section-title">Who I <span>Am</span></h2>
+        <p class="section-tagline">A versatile problem solver blending technical deep-dives with rapid deployment
+          prototypes.</p>
+      </header>
+      <div class="about-content-grid">
+        <div class="about-text-column reveal">
+          <div class="about-biography">
+            <p>I'm <strong>Sai Shiva</strong>, a tech enthusiast with a holistic view of modern computing. My focus
+              doesn't just rest on writing scalable code, but on understanding how data flows, how systems are defended,
+              and how products can be deployed rapidly.</p>
+            <p>Whether I'm developing robust custom backends, analyzing datasets for actionable intelligence, fortifying
+              networks securely, or leveraging low-code tools to solve business needs instantly—I approach every
+              challenge with strategic execution.</p>
+          </div>
+          <div class="about-metrics">
+            <div class="metric-card">
+              <span class="metric-value">4+</span>
+              <span class="metric-label">Domains<br />Explored</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">10+</span>
+              <span class="metric-label">Core<br />Technologies</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">2+</span>
+              <span class="metric-label">Professional<br />Specializations</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-timeline-column reveal">
+          <div class="timeline-entry">
+            <span class="timeline-date">Multidisciplinary Focus</span>
+            <div class="timeline-content-card">
+              <div class="timeline-icon"><i class="fas fa-layer-group"></i></div>
+              <h3>Full Stack web development</h3>
+              <p>Designing custom architectures while also leveraging platforms for rapid agile enterprise delivery.</p>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <span class="timeline-date">Analytical & Secure</span>
+            <div class="timeline-content-card">
+              <div class="timeline-icon"><i class="fas fa-chart-network"></i></div>
+              <h3>Data & Cyber</h3>
+              <p>Harnessing data for decision-making and implementing security-first design principles inside
+                applications.</p>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-content-card">
+              <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+              <h3>B.Tech – Electronics & Communication Engineering</h3>
+              <p>Building foundational academic knowledge in engineering alongside modern, self-taught practical skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider" aria-hidden="true" />
+  <!-- ═══ EXPERTISE (SKILLS) SECTION ═══ -->
+  <section id="skills" class="skills-section">
+    <div class="section-inner-container">
+      <header class="section-header reveal">
+        <span class="section-kicker">Capability Matrix</span>
+        <h2 class="section-title">Domain <span>Expertise</span></h2>
+        <p class="section-tagline">Core tools and disciplines I rely on to execute complex projects.</p>
+      </header>
+      <div class="skills-grid">
+        <!-- Full Stack -->
+        <article class="skill-card reveal" data-competency="85">
+          <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+          <h3 class="skill-name">Full Stack Dev</h3>
+          <div class="skill-progress-track">
+            <div class="skill-progress-fill"></div>
+          </div>
+          
+        </article>
+        <!-- Data Analysis -->
+        <article class="skill-card reveal" data-competency="80">
+          <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+          <h3 class="skill-name">Data Analytics</h3>
+          <div class="skill-progress-track">
+            <div class="skill-progress-fill"></div>
+          </div>
+          
+        </article>
+        <!-- CyberSecurity -->
+        <article class="skill-card reveal" data-competency="75">
+          <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="skill-name">Cybersecurity</h3>
+          <div class="skill-progress-track">
+            <div class="skill-progress-fill"></div>
+          </div>
+        </article>
+        <!-- Low Code / No Code -->
+        <article class="skill-card reveal" data-competency="90">
+          <div class="skill-icon"><i class="fas fa-bolt"></i></div>
+          <h3 class="skill-name">Low/No-Code</h3>
+          <div class="skill-progress-track">
+            <div class="skill-progress-fill"></div>
+          </div>
+          
+        </article>
+        <!-- Database -->
+        <article class="skill-card reveal" data-competency="85">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <h3 class="skill-name">SQL & Data Modeling</h3>
+          <div class="skill-progress-track">
+            <div class="skill-progress-fill"></div>
+          </div>
+          
+        </article>
+        <!-- Cloud AI -->
+        <article class="skill-card reveal" data-competency="70">
+          <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+          <h3 class="skill-name">Azure & AI Tools</h3>
+          <div class="skill-progress-track">
+            <div class="skill-progress-fill"></div>
+          </div>
+          
+        </article>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider" aria-hidden="true" />
+  <!-- ═══ PROJECTS SECTION ═══ -->
+  <section id="projects" class="projects-section">
+    <div class="section-inner-container">
+      <header class="section-header reveal">
+        <span class="section-kicker">Portfolio</span>
+        <h2 class="section-title">Featured <span>Work</span></h2>
+        <p class="section-tagline">Demonstrating cross-functional capabilities through real-world applications.</p>
+      </header>
+      <div class="projects-grid">
+        <!-- Project 1: Cybersecurity -->
+        <article class="project-card reveal">
+          <div class="project-indexing">01</div>
+          <div class="project-icon-badge"><i class="fas fa-network-wired"></i></div>
+          <h3 class="project-title">Threat Intelligence Dashboard</h3>
+          <p class="project-description"> Real-Time Cybersecurity Project<br>
+<b>The Challenge:</b> Security analysts frequently lose critical response time manually querying multiple, disparate threat intelligence platforms to investigate suspicious IP addresses, URLs, and newly disclosed vulnerabilities.<br>
+<b>The Solution:</b> I engineered a centralized, interactive threat intelligence platform designed to aggregate and visualize data from tier-one security feeds (AbuseIPDB, AlienVault OTX, URLhaus, NVD). Built with Python and Streamlit, the application features a robust SQLite backend that processes incoming telemetry and presents it through dynamic Plotly visualizations.
+</p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Security</span>
+            <span class="tech-tag">API</span>
+          </div>
+          <footer class="project-actions">
+            <a href="https://github.com/Saishiva00/Threat-Intelligence-Dashboard" class="btn btn--text" aria-label="View Threat Dashboard on GitHub"><i class="fab fa-github"></i>
+              Source</a>
+            <a href="https://threat-intelligence-dashboard-zjiwvultwjnbtr63fekdft.streamlit.app" class="btn btn--text" aria-label="Live Demo of Threat Dashboard"><i
+                class="fas fa-external-link-alt"></i> Live</a>
+          </footer>
+        </article>
+   <!-- Project 2: Data Engineer-->
+<article class="project-card reveal">
+  <div class="project-indexing">02</div>
+  <div class="project-icon-badge"><i class="fas fa-brain"></i></div>
+  <h3 class="project-title">Library Management System</h3>
+  <p class="project-description">
+    Designed and developed a scalable Library Management System using Java and Spring Boot to manage book inventory, user records, and borrowing operations. The system leverages a hybrid database architecture—using MySQL with Spring Data JPA for structured transactional data and MongoDB for flexible storage of book metadata. Implemented secure and well-structured RESTful APIs to enable seamless integration with front-end applications, ensuring efficient data handling and system performance.
+  </p>
+  <div class="project-tech-stack">
+    <span class="tech-tag">Java</span>
+    <span class="tech-tag">Spring Boot</span>
+    <span class="tech-tag">MySQL</span>
+    <span class="tech-tag">MongoDB</span>
+  </div>
+  <footer class="project-actions">
+    <a href="https://github.com/Saishiva00/Library_Management_System" class="btn btn--text">
+      <i class="fab fa-github"></i> Source
+    </a>
+    <a href="https://librarymanagementsystem-saishiva.netlify.app/" class="btn btn--text">
+      <i class="fas fa-external-link-alt"></i> Live
+    </a>
+  </footer>
+</article>
+        <!-- Project 3: Data Analysis & AI -->
+       <article class="project-card reveal">
+  <div class="project-indexing">03</div>
+  <div class="project-icon-badge"><i class="fas fa-chart-line"></i></div>
+  <h3 class="project-title">Credit Card Default Risk Intelligence Platform</h3>
+  <p class="project-description">
+    Designed and developed a data-driven Credit Risk Intelligence Platform using Python to analyze over 30,000 customer records. The system focuses on identifying key factors influencing default behavior through structured data processing, feature engineering, and exploratory analysis. Critical risk indicators such as payment delays and credit utilization were derived and analyzed to uncover high-risk customer segments. The project simulates real-world financial risk assessment by enabling data-driven insights that support better credit decision-making.
+  </p>
+  <div class="project-tech-stack">
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">Pandas</span>
+    <span class="tech-tag">NumPy</span>
+    <span class="tech-tag">Matplotlib</span>
+    <span class="tech-tag">Seaborn</span>
+  </div>
+  <footer class="project-actions">
+    <a href="https://github.com/Saishiva00/Credit-Card-Default-Risk-Intelligence-Platform" class="btn btn--text">
+      <i class="fab fa-github"></i> Source
+    </a>
+  </footer>
+</article>
+        <!-- Project 4: Full Stack / Low Code Hybrid -->
+        <article class="project-card reveal">
+          <div class="project-indexing">04</div>
+          <div class="project-icon-badge"><i class="fas fa-server"></i></div>
+          <h3 class="project-title">Customer Churn Analysis</h3>
+          <p class="project-description">Customer Churn Analysis is a data science project aimed at understanding why customers leave a service and predicting potential churn using machine learning models.<br><br>The project uses historical customer data to uncover behavioral patterns, perform exploratory analysis, and train predictive models that estimate churn risk.<br><br>Businesses often struggle to retain customers due to lack of predictive insights. This project helps organizations identify high-risk customers and take proactive measures to improve retention.</p>
+          <div class="project-tech-stack">
+            <span class="tech-tag">Data Analysis</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Data Visualization</span>
+          </div>
+          <footer class="project-actions">
+            <a href="https://github.com/Saishiva00/Customer-Churn-Analysis" class="btn btn--text"><i class="fas fa-external-link-alt"></i> Source</a>
+          </footer>
+        </article>
+  <!-- Project 5: Full Stack / Low Code Hybrid -->
+ <article class="project-card reveal">
+  <div class="project-indexing">05</div>
+  <div class="project-icon-badge"><i class="fas fa-database"></i></div>
+  <h3 class="project-title">E-Commerce Data Warehouse</h3>
+  <p class="project-description">
+    Designed and built a scalable E-Commerce Data Warehouse using MySQL to transform raw transactional data into a structured analytics-ready system. Implemented a multi-stage ETL pipeline to process over 500,000 records, including data cleaning, transformation, and loading into a Star Schema with fact and dimension tables. Applied data quality checks, indexing, and optimized schema design to improve query performance and enable faster, reliable business reporting and insights.
+  </p>
+  <div class="project-tech-stack">
+    <span class="tech-tag">MySQL</span>
+    <span class="tech-tag">ETL</span>
+    <span class="tech-tag">Data Modeling</span>
+    <span class="tech-tag">Star Schema</span>
+  </div>
+  <footer class="project-actions">
+    <a href="https://github.com/Saishiva00/Ecommerce-Data-Warehouse-MySQL" class="btn btn--text">
+      <i class="fab fa-github"></i> Source
+    </a>
+  </footer>
+</article>
+ <!-- Project 6: Low Code Hybrid -->
+  <article class="project-card reveal">
+  <div class="project-indexing">06</div>
+  <div class="project-icon-badge"><i class="fas fa-users"></i></div>
+  <h3 class="project-title">Employee Leave Management System</h3>
+  <p class="project-description">
+    Designed and developed an Employee Leave Management System using Microsoft Power Apps to streamline leave requests, approvals, and employee record management. Built an intuitive interface for employees and managers to track leave balances, submit requests, and monitor approval workflows in real time. Integrated backend data storage and automated workflows to improve efficiency, reduce manual tracking, and ensure accurate leave management across the organization.
+  </p>
+  <div class="project-tech-stack">
+    <span class="tech-tag">Power Apps</span>
+    <span class="tech-tag">Power Automate</span>
+    <span class="tech-tag">Dataverse</span>
+    <span class="tech-tag">SharePoint</span>
+  </div>
+  <footer class="project-actions">
+    <a href="YOUR_GITHUB_LINK" class="btn btn--text">
+      <i class="fab fa-github"></i> Source
+    </a>
+  </footer>
+</article>
+      </div>
+    </div>
+  </section>
+  
+  <hr class="section-divider" aria-hidden="true" />
+  <!-- ═══ CERTIFICATIONS SECTION ═══ -->
+  <section id="certs" class="certifications-section">
+    <div class="section-inner-container">
+      <header class="section-header reveal">
+        <span class="section-kicker">Validation</span>
+        <h2 class="section-title">Official <span>Credentials</span></h2>
+        <p class="section-tagline">Industry-backed certifications solidifying foundational logic and system expertise.
+        </p>
+      </header>
+      <div class="certifications-grid">
+        <article class="cert-card reveal">
+          <div class="cert-provider-icon"><i class="fab fa-microsoft"></i></div>
+          <h3 class="cert-title">Azure AI Fundamentals</h3>
+          <p class="cert-issuer">Microsoft</p>
+          <span class="cert-verification"><i class="fas fa-check-circle"></i> Verified · 2025</span>
+        </article>
+        <article class="cert-card reveal">
+          <div class="cert-provider-icon"><i class="fas fa-database"></i></div>
+          <h3 class="cert-title">Python for Datascience, AI & Development</h3>
+          <p class="cert-issuer">IBM / Coursera</p>
+          <span class="cert-verification"><i class="fas fa-check-circle"></i> Verified · 2025</span>
+        </article>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider" aria-hidden="true" />
+  <!-- ═══ CONTACT SECTION ═══ -->
+  <section id="contact" class="contact-section">
+    <div class="section-inner-container">
+      <header class="section-header reveal">
+        <span class="section-kicker">Initiate Secure Connection</span>
+        <h2 class="section-title">Let's <span>Collaborate</span></h2>
+        <p class="section-tagline">Open to robust roles spanning Development, Security, Analytics, and Modular
+          Architecting.</p>
+      </header>
+      <div class="contact-grid">
+        <div class="contact-details">
+          <address class="contact-method reveal">
+            <div class="contact-icon-wrapper"><i class="fas fa-envelope"></i></div>
+            <div class="contact-text-wrapper">
+              <h3>Secure Transmission</h3>
+              <a href="mailto:saishivaakula9381@gmail.com">saishivaakula9381@gmail.com</a>
+            </div>
+          </address>
+          <address class="contact-method reveal">
+            <div class="contact-icon-wrapper"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-text-wrapper">
+              <h3>Base Node</h3>
+              <p>India / Remote Open</p>
+            </div>
+          </address>
+          <div class="contact-method reveal">
+            <div class="contact-icon-wrapper"><i class="fas fa-share-nodes"></i></div>
+            <div class="contact-text-wrapper">
+              <h3>Social Networks</h3>
+              <nav class="social-links-row" aria-label="Social media profiles">
+                <a href="https://github.com/Saishiva00/Saishiva-Akula" class="social-icon" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/saishivaakula" class="social-icon" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" aria-label="Contact Form">
+          <div class="form-input-row">
+            <div class="form-field">
+              <label for="contact-name">Identifier</label>
+              <input type="text" id="contact-name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Return Address</label>
+              <input type="email" id="contact-email" name="email" placeholder="john@example.com" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="contact-subject">Objective</label>
+            <input type="text" id="contact-subject" name="subject" placeholder="Project / Job Opportunity" required />
+          </div>
+          <div class="form-field">
+            <label for="contact-payload">Message Payload</label>
+            <textarea id="contact-payload" name="message" rows="5" placeholder="Define the operational parameters here…"
+              required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary submit-btn" id="contact-submit-btn">
+            <i class="fas fa-paper-plane"></i> Dispatch Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Architected with precision by <span class="footer-highlight">Sai Shiva</span> &nbsp;|&nbsp; © 2026 Production
+        Ready</p>
+    </div>
+  </footer>
+  <!-- Centralized Logic -->
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>
