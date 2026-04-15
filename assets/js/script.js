@@ -6,9 +6,7 @@
  * clean architecture and modern JavaScript features (ES6+).
  * Beginner note: Methods are grouped into highly legible functions.
  */
-
 document.addEventListener('DOMContentLoaded', () => {
-
   /** 
    * 1. Loader Overlay Handler 
    * Gracefully removes the loading screen after the initial HTML/CSS is parsed.
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       loaderEl.classList.add('hidden');
     }, 600);
   }
-
   /** 
    * 2. Theme Toggle (Dark / Light Mode)
    * Toggles the data-theme attribute on the root HTML element.
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-btn');
   const rootHtml = document.documentElement;
   let isDarkMode = true;
-
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
       isDarkMode = !isDarkMode;
@@ -47,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     });
   }
-
   /** 
    * 3. Navigation Controls (Hamburger Menu & Sticky Scroll)
    */
@@ -55,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('hamburger-menu');
   const mobileMenu = document.getElementById('mobile-menu');
   const backToTopBtn = document.getElementById('back-to-top');
-
   // Handle Scroll Events for Navbar styling and Back-to-Top visibility
   window.addEventListener('scroll', () => {
     // Add box shadow to nav when scrolled past 50px
@@ -64,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       navBar.classList.remove('scrolled');
     }
-
     // Show Back-to-Top button when far down the page (400px+)
     if (backToTopBtn) {
       if (window.scrollY > 400) {
@@ -74,14 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-
   // Handle Back-to-Top click
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-
   // Handle Mobile Menu Toggle
   if (hamburgerBtn && mobileMenu) {
     hamburgerBtn.addEventListener('click', () => {
@@ -89,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.classList.toggle('open');
       hamburgerBtn.setAttribute('aria-expanded', !isOpen);
     });
-
     // Close menu when a link inside it is clicked
     const mobileLinks = document.querySelectorAll('.mobile-link');
     mobileLinks.forEach(link => {
@@ -99,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
   /** 
    * 4. Reveal Animations via Intersection Observer
    * Allows elements (like text and cards) to fade up when scrolled into view.
@@ -120,28 +109,46 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, revealObserverOptions);
-
   revealElements.forEach(el => revealObserver.observe(el));
-
-
   /** 
    * 5. Skill Bar Animations
    * Animates the percentage bars when the user scrolls to the "Skills" section.
    */
   const skillCards = document.querySelectorAll('.skill-card');
   const skillObserverOptions = { threshold: 0.3 };
-
   const skillObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // Find the inner bar element
         const progressBar = entry.target.querySelector('.skill-progress-fill');
-        const targetPercentage = entry.target.dataset.competency;
+        const targetPercentage = parseInt(entry.target.dataset.competency, 10);
         
         if (progressBar && targetPercentage) {
+          // Create percentage display dynamically
+          let percentageSpan = entry.target.querySelector('.skill-percentage');
+          if (!percentageSpan) {
+            percentageSpan = document.createElement('span');
+            percentageSpan.className = 'skill-percentage';
+            entry.target.appendChild(percentageSpan);
+          }
           // Slight delay to sync with CSS fade-in
           setTimeout(() => {
             progressBar.style.width = targetPercentage + '%';
+            
+            // Animate percentage text from 0 to target
+            let currentPercent = 0;
+            const duration = 1500; // Matches CSS transition 1.5s
+            const intervalTime = 20;
+            const step = targetPercentage / (duration / intervalTime);
+            
+            const counter = setInterval(() => {
+              currentPercent += step;
+              if (currentPercent >= targetPercentage) {
+                currentPercent = targetPercentage;
+                clearInterval(counter);
+              }
+              percentageSpan.innerText = Math.round(currentPercent) + '%';
+            }, intervalTime);
           }, 150);
         }
         
@@ -149,10 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, skillObserverOptions);
-
   skillCards.forEach(card => skillObserver.observe(card));
-
-
   /** 
    * 6. Hero Section Typing Effect
    * Simulates typing in the Hero banner. Expanded to cover new roles.
@@ -170,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPhraseIndex = 0;
     let currentCharIndex = 0;
     let isDeleting = false;
-
     function executeTyping() {
       const currentPhrase = rolePhrases[currentPhraseIndex];
       
@@ -205,8 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start typing after initial loader finishes
     setTimeout(executeTyping, 1500);
   }
-
-
   /** 
    * 7. Mock Form Submission (Contact Section)
    * Replaces default form reload with a visual success indicator and resets.
@@ -222,7 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
       inputs.forEach(input => {
         if(!input.checkValidity()) isValid = false;
       });
-
       if (isValid) {
         e.preventDefault(); // Prevent page refresh only if valid
         
@@ -241,8 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-
   /** 
    * 8. Active Navigation Highlighting 
    * Highlights the current section link in the top Navbar as the user scrolls.
@@ -253,20 +251,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const highlightObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Clear all active states
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        // Clear all active states (Desktop + Mobile)
+        document.querySelectorAll('.nav-links a, .mobile-link').forEach(link => {
           link.classList.remove('active');
         });
         
-        // Add active state to corresponding nav link
-        const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-        if (activeLink) {
-          activeLink.classList.add('active');
-        }
+        // Add active state to corresponding nav link elements
+        const activeLinks = document.querySelectorAll(`.nav-links a[href="#${entry.target.id}"], .mobile-link[href="#${entry.target.id}"]`);
+        activeLinks.forEach(link => link.classList.add('active'));
       }
     });
   }, highlightObserverOptions);
-
   pageSections.forEach(section => highlightObserver.observe(section));
-
 });
