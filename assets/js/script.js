@@ -263,4 +263,102 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, highlightObserverOptions);
   pageSections.forEach(section => highlightObserver.observe(section));
+
+  /** 
+ * 9. AI Chatbot (FAQ Assistant)
+ * Handles chatbot UI toggle + API communication
+ */
+const chatToggle = document.getElementById("chat-toggle");
+const chatWindow = document.getElementById("chat-window");
+const chatInput = document.getElementById("chat-input");
+const chatMessages = document.getElementById("chat-messages");
+
+let isOpen = false;
+
+chatToggle.addEventListener("click", (e) => {
+  e.stopPropagation(); // prevent outside click trigger
+
+  isOpen = !isOpen;
+
+  if (isOpen) {
+    chatWindow.classList.remove("hidden");
+  } else {
+    chatWindow.classList.add("hidden");
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (!chatWindow.contains(e.target) && !chatToggle.contains(e.target)) {
+    chatWindow.classList.add("hidden");
+    isOpen = false;
+  }
+});
+
+chatWindow.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+if (chatToggle && chatWindow && chatInput && chatMessages) {
+
+
+  // Initial welcome message
+  chatMessages.innerHTML = `
+    <div class="chat-bot">Hi 👋 I'm Sai Shiva's AI assistant. Ask me anything!</div>
+  `;
+
+  // Handle user input
+  chatInput.addEventListener("keypress", async (e) => {
+    if (e.key === "Enter") {
+      const message = chatInput.value.trim();
+      if (!message) return;
+
+      // Show user message
+      chatMessages.innerHTML += `
+        <div class="chat-user">You: ${message}</div>
+      `;
+
+      chatInput.value = "";
+
+      // Show typing indicator
+      chatMessages.innerHTML += `
+        <div class="chat-bot" id="typing">Typing...</div>
+      `;
+
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      try {
+        // API call
+        const res = await fetch("http://127.0.0.1:5000/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ message: message })
+        });
+
+        const data = await res.json();
+
+        // Remove typing
+        const typingEl = document.getElementById("typing");
+        if (typingEl) typingEl.remove();
+
+        // Show bot response
+        chatMessages.innerHTML += `
+          <div class="chat-bot">${data.response}</div>
+        `;
+
+      } catch (error) {
+        // Handle API failure
+        const typingEl = document.getElementById("typing");
+        if (typingEl) typingEl.remove();
+
+        chatMessages.innerHTML += `
+          <div class="chat-bot">⚠️ Server not responding. Please try later.</div>
+        `;
+      }
+
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  });
+}
 });

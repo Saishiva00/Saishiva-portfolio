@@ -627,3 +627,102 @@ section { position: relative; z-index: 1; }
   .form-input-row { grid-template-columns: 1fr; gap: 0; }
   .section-inner-container { padding: 80px 1.5rem; }
   .hero-title { font-size: 3rem; }
+}
+
+/* =========================================
+   AI CHATBOT (Portfolio Assistant)
+========================================= */
+
+#ai-chatbot {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1100;
+}
+
+/* Floating Button */
+#chat-toggle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--lav-700), var(--lav-500));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 25px var(--glow-color);
+  transition: transform var(--transition-fast);
+}
+
+#chat-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Chat Window */
+#chat-window {
+  width: 320px;
+  height: 420px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  overflow: hidden;
+  animation: fadeUp 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Header */
+#chat-header {
+  padding: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+
+  background: linear-gradient(135deg, var(--lav-700), var(--lav-500));
+  color: #fff;
+}
+
+/* Messages */
+#chat-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+/* Chat bubbles */
+.chat-user {
+  text-align: right;
+  margin: 6px 0;
+  color: var(--lav-300);
+}
+
+.chat-bot {
+  text-align: left;
+  margin: 6px 0;
+  color: var(--text-primary);
+}
+
+/* Input */
+#chat-input {
+  border: none;
+  padding: 12px;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  border-top: 1px solid var(--border-color);
+}
